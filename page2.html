@@ -1,0 +1,141 @@
+<html>
+<head>
+<style>
+body
+{
+	background:lightblue;
+}
+label
+{
+width:150px;
+display:inline-block;
+text-align:left;	
+}
+form
+{
+margin:25px auto;
+padding:20px;
+border:5px solid #ccc;
+width:500px;
+background:deepskyblue;	
+}
+</style
+</head>
+<body>
+<br>
+<center>
+<h2>CO ATTAINMENT REPORT FOR COURSE</h2></center>
+<form  method="post">
+<p>
+<label><b>CO1:</b></label>
+<br>
+<label>ISE-I:</label>
+<input type="number" name="ISE-I" id="ise1"/><br>
+<br>
+<label>ISE-II:</label>
+<input type="number" name="ISE-II" id="ise2"/><br>
+<br>
+<label>MSE:</label>
+<input type="number" name="MSE" id="mse"/><br>
+<br>
+<label>ESE</label>
+<input type="number" name="ESE" id="ese"/><br>
+<br>
+<label>Class Average Target:</label>
+ <input type="number" name="Target" id="target"/><br>
+<br>
+<button type="button" onclick="getInputValue1();">Calculate</button>
+	<br>
+  <p>Percentage CO Attainment:
+   <span id = "result"></span>
+    </p>
+	
+	<p>
+<label><b>CO2:</b></label>
+<br>
+<label>ISE-I:</label>
+<input type="number" name="ISE-I" id="ise11"/><br>
+<br>
+<label>ISE-II:</label>
+<input type="number" name="ISE-II" id="ise21"/><br>
+<br>
+<label>MSE:</label>
+<input type="number" name="MSE" id="mse1"/><br>
+<br>
+<label>ESE</label>
+<input type="number" name="ESE" id="ese1"/><br>
+<br>
+<label>Class Average Target:</label>
+ <input type="number" name="Target" id="target1"/><br>
+<br>
+<button type="button" onclick="getInputValue();">Calculate</button>
+	<br>
+  <p>Percentage CO Attainment:
+   <span id = "result1"></span>
+    </p>
+
+   <script>
+        function getInputValue1(){
+            // Selecting the input element and get its value 
+            var a = document.getElementById("ise1").value;
+            var b = document.getElementById("ise2").value;
+            var c = document.getElementById("mse").value;
+            var d = document.getElementById("ese").value;
+			var e = parseInt(document.getElementById("target").value);
+			
+			
+			if(a == '' || a == null){a = 0};
+			if(b == '' || b == null){b = 0};
+			if(c == '' || c == null){c = 0};
+			if(d == '' || d == null){d = 0};
+			
+			 a = parseInt(a);
+			 b = parseInt(b);
+			 c = parseInt(c);
+			 d = parseInt(d);
+		
+			
+			if (a >= 0 && a <= 100 && b >= 0 && b <= 100 && c >= 0 && c <= 100 && d >= 0 && d <= 100) 
+	        {	
+			document.getElementById("result").innerHTML = (Math.min( ((((a + b + c + d) / 4)/e)* 100), 100));
+			} 
+			else 
+			{
+			 alert("Enter the marks between 0 to 100");
+			}
+		}
+    </script>
+	<script>
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var a = document.getElementById("ise11").value;
+            var b = document.getElementById("ise21").value;
+            var c = document.getElementById("mse1").value;
+            var d = document.getElementById("ese1").value;
+			var e = parseInt(document.getElementById("target1").value);
+			
+			if(a == '' || a == null){a = 0};
+			if(b == '' || b == null){b = 0};
+			if(c == '' || c == null){c = 0};
+			if(d == '' || d == null){d = 0};
+			
+			 a = parseInt(a);
+			 b = parseInt(b);
+			 c = parseInt(c);
+			 d = parseInt(d);
+			
+			if (a >= 0 && a <= 100 && b >= 0 && b <= 100 && c >= 0 && c <= 100 && d >= 0 && d <= 100) 
+	        {	
+			document.getElementById("result1").innerHTML = (Math.min( ((((a + b + c + d) / 4)/e)* 100), 100));
+			} 
+			else 
+			{
+			 alert("Enter the marks between 0 to 100");
+			}
+		}
+    </script>
+	
+
+</form>
+</body>
+</html>
